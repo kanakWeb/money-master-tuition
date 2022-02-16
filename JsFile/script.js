@@ -61,17 +61,20 @@ function DiscountCalculate() {
     const incomeField = document.getElementById('income-field').value;
 
     const discounField = document.getElementById('discoun-field').value;
+    if (discounField == '' || discounField < 0) {
+        alert('hi')
+    } else {
+
+        const Discount = (parseFloat(incomeField) * parseFloat(discounField)) / 100;
 
 
-    const Discount = (parseFloat(incomeField) * parseFloat(discounField)) / 100;
+        const savingAmount = document.getElementById('saving-amount').innerText = Discount;
 
+        const BalenceOf = document.getElementById('Balance').innerText;
 
-    const savingAmount = document.getElementById('saving-amount').innerText = Discount;
-
-    const BalenceOf = document.getElementById('Balance').innerText;
-
-    const remainingBalence = parseFloat(BalenceOf) - parseFloat(savingAmount)
-    document.getElementById('remaining-balance').innerText = remainingBalence;
+        const remainingBalence = parseFloat(BalenceOf) - parseFloat(savingAmount)
+        document.getElementById('remaining-balance').innerText = remainingBalence;
+    }
 }
 
 
