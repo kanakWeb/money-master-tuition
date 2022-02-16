@@ -16,16 +16,16 @@
 <body>
     <header>
         <div class="container text-center py-4">
-            <h2>Tuition income and own expenses</h2>
+            <h2 class="py-3">Tuition income and own expenses</h2>
         </div>
     </header>
     <div>
         <div class="row">
-            <div class="container col-6">
+            <div class="container py-5 col-lg-6 col-sm-12">
                 <img src="image/tution income cost.jpg" alt="tution income cost">
             </div>
-            <div class="container col-5">
-                <div>
+            <div class="container col-lg-5 col-sm-12">
+                <div class="container">
                     <h4 class="text-center">Income</h4>
                     <div class="form-group row align-items-center">
                         <label for="emailAddress" class="col-4 col-form-label-sm text-right fs-4">Income:</label>
@@ -38,7 +38,7 @@
                 </div>
 
 
-                <div>
+                <div class="container">
                     <h4 class="text-center">Expense</h4>
 
                     <div class="form-group row align-items-center">
@@ -72,10 +72,14 @@
                             <h4 class="text-center">Total Expenses:<span> 0 </span> </h4>
                             <h4 class="text-center">Balance:<span> 0 </span> </h4>
                         </div>
-                        <div class="discount-part text-center">
+                        <div class="discount-part py-4 text-center">
 
                             <span>Save : </span> <input id="discoun-field" placeholder="50" name="number" type="number"> %
                             <button class="btn btn-sm btn-primary">Discount</button>
+                        </div>
+                        <div class="remain-part py-4">
+                            <h4 class="text-center">Saving Amount : <span> 0 </span> </h4>
+                            <h4 class="text-center">Remaining Balance : <span> 0 </span> </h4>
                         </div>
                     </div>
                 </div>
