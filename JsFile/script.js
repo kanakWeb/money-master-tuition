@@ -62,7 +62,7 @@ function DiscountCalculate() {
 
     const discounField = document.getElementById('discoun-field').value;
     if (discounField == '' || discounField < 0) {
-        alert('hi')
+        alert('Error please number or positive Your discount field')
     } else {
 
         const Discount = (parseFloat(incomeField) * parseFloat(discounField)) / 100;
