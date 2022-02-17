@@ -1,45 +1,3 @@
-//document.getElementById('calculate-button').addEventListener('click', function() {
-
-/*  const foodField = document.getElementById('food-field').value;
- const rentField = document.getElementById('rent-field').value;
- const clothesField = document.getElementById('clothes-field').value;
-
-
- const calculateValue = parseFloat(foodField) + parseFloat(rentField) + parseFloat(clothesField);
-
-
-
- const totalExpenses = document.getElementById('total-expenses').innerText = calculateValue; */
-//expensesCalculate();
-
-/* const incomeField = document.getElementById('income-field').value;
-
-const totalBalence = parseFloat(incomeField) - parseFloat(calculateValue) */
-
-// const BalenceOf = document.getElementById('Balance').innerText = totalBalence
-//})
-
-// document.getElementById('discount-button').addEventListener('click', function() {
-/* const incomeField = document.getElementById('income-field').value;
-
-const discounField = document.getElementById('discoun-field').value;
-
-
-const Discount = (parseFloat(incomeField) * parseFloat(discounField)) / 100;
-
-
-const savingAmount = document.getElementById('saving-amount').innerText = Discount; */
-// DiscountCalculate();
-
-/* const BalenceOf = document.getElementById('Balance').innerText;
-
-const remainingBalence = parseFloat(BalenceOf) - parseFloat(savingAmount) */
-
-// document.getElementById('remaining-balance').innerText = remainingBalence;
-// })
-
-// total expensesIncomesCalculate
-
 function expensesIncomesCalculate() {
 
     // here is catch value food input,rent input,clothes input
@@ -91,8 +49,7 @@ function expensesIncomesCalculate() {
 
 
             alert('Error! your income is low.please update your income')
-            const totalBalence = parseFloat(incomeField) - parseFloat(calculateValue)
-            const BalenceOf = document.getElementById('Balance').innerText = totalBalence
+            const BalenceOf = document.getElementById('Balance').innerText = '00'
 
             // here is income high and calculateValue low then output totalbalence 
         } else if (incomeField > calculateValue) {
@@ -119,7 +76,7 @@ function DiscountSavingReminingCalculate() {
 
     // here is income input value catch and discount value
     const incomeField = document.getElementById('income-field').value;
-    const discounField = document.getElementById('discoun-field').value;
+    const discountField = document.getElementById('discount-field').value;
 
 
     if (incomeField == '' || incomeField < 0) {
@@ -128,7 +85,7 @@ function DiscountSavingReminingCalculate() {
 
 
 
-    } else if (discounField == ' ' || discounField < 0) {
+    } else if (discountField == ' ' || discountField < 0) {
         //empty string and negative error handle discount input
 
         alert('Error! please enter number or positive Your discount input')
@@ -136,7 +93,7 @@ function DiscountSavingReminingCalculate() {
     } else {
 
         //here is discount 
-        const Discount = (parseFloat(incomeField) * parseFloat(discounField)) / 100;
+        const Discount = (parseFloat(incomeField) * parseFloat(discountField)) / 100;
 
 
         const savingAmount = document.getElementById('saving-amount').innerText = Discount;
@@ -148,8 +105,7 @@ function DiscountSavingReminingCalculate() {
 
             // here is remainingBalence for negative number
             alert('Error! you Balence is low .No remain ')
-            const remainingBalence = parseFloat(BalenceOf) - parseFloat(savingAmount)
-            document.getElementById('remaining-balance').innerText = remainingBalence;
+            document.getElementById('remaining-balance').innerText = '00';
 
 
         } else {

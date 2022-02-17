@@ -13,17 +13,28 @@
 </head>
 
 <body style="background-color: #f2eaea;">
+
+    <!-- Here is header part ......................... -->
+
     <header>
         <div class="container text-center py-4">
             <h2 class="py-3">Tuition Income and own expenses</h2>
         </div>
     </header>
+
+
+
+    <!-- Here is main part ......................................................... -->
     <main>
         <div class="row">
+            <!-- image add .................................................. -->
             <div class="container py-5 col-lg-6 col-sm-12">
                 <img class="img-fluid rounded  img-thumbnail" src="image/tution income cost.jpg" alt="tution income cost">
             </div>
+
+            <!-- income and own expense........................................................................... -->
             <div class="container col-lg-5 col-sm-12">
+                <!-- here is income side......................................................................... -->
                 <div class="container">
                     <h4 class="text-center">Income</h4>
                     <div class="form-group row align-items-center">
@@ -38,11 +49,11 @@
 
 
 
-                <!-- expensive part -->
-
-
+                <!-- here is expepense............................................................... -->
                 <div class="container">
                     <h4 class="text-center">Expense</h4>
+
+                    <!-- here is food field..................................................... -->
 
                     <div class="form-group row align-items-center">
                         <label for="Food" class="col-4 col-form-label-sm text-right fs-4">Food:</label>
@@ -52,6 +63,9 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- here is Rent field..................................................... -->
+
                     <div class="form-group row align-items-center">
                         <label for="Rent" class="col-4 col-form-label-sm text-right fs-4">Rent:</label>
                         <div class="col-7">
@@ -60,7 +74,11 @@
                             </div>
                         </div>
                     </div>
+
+
                     <div class="form-group row align-items-center">
+
+                        <!-- here is Clothes field..................................................... -->
                         <label for="Clothes" class="col-4 col-form-label-sm text-right fs-4">Clothes:</label>
                         <div class="col-7">
                             <div class="input-group">
@@ -68,19 +86,27 @@
                             </div>
 
                         </div>
+
+                        <!-- here is calculate button ....................................................... -->
                         <div class="text-center p-4">
                             <button id="calculate-button" type="button" class="btn btn-lg btn-primary px-5"> Calculate
                             </button>
                         </div>
+
+                        <!-- here is Total Expenses and Balance.................................................. -->
                         <div>
                             <h4 class="text-center">Total Expenses:<span id="total-expenses"> 0 </span> </h4>
                             <h4 class="text-center">Balance:<span id="Balance"> 0 </span> </h4>
                         </div>
+
+                        <!-- here is discount field and discount button........................................... -->
                         <div class="discount-part py-4 text-center">
 
-                            <span>Save : </span> <input id="discoun-field" placeholder="20" name="number" type="number" class="text-center"> %
+                            <span>Save : </span> <input id="discount-field" placeholder="20" name="number" type="number" class="text-center"> %
                             <button id="discount-button" class="btn btn-sm btn-primary">Discount</button>
                         </div>
+
+                        <!-- here is Total Saving Amount and Remaining Balance..................................... -->
                         <div class="remaine-saving-Part py-4">
                             <h4 class="text-center">Saving Amount : <span id="saving-amount"> 0 </span> </h4>
                             <h4 class="text-center">Remaining Balance : <span id="remaining-balance"> 0 </span> </h4>
