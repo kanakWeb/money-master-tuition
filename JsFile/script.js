@@ -10,7 +10,7 @@ function expensesIncomesCalculate() {
         alert('Error! check input')
     } else if (foodField < 0 || foodField == '') {
         //empty string and negative error handle food input
-        alert('Error! please enter a number input')
+
 
         alert('Error! please enter a number and positve number of your food input')
 
@@ -85,7 +85,7 @@ function DiscountSavingReminingCalculate() {
     //empty string and negative error handle discount input
 
 
-    if (incomeField == '' || incomeField < 0 && discountField == ' ' || discountField < 0) {
+    if (incomeField == ' ' || incomeField < 0 && discountField == ' ' || discountField < 0) {
         //empty string and negative error handle income input
         alert('Error! please enter valid number input field')
 
@@ -95,29 +95,35 @@ function DiscountSavingReminingCalculate() {
         //here is error handle  discount 
         if (discountField == '') { alert('Error! please input discont field') }
         //here is discount 
-        else {
+        else if (incomeField > 0) {
             const Discount = (parseFloat(incomeField) * parseFloat(discountField)) / 100;
 
 
             const savingAmount = document.getElementById('saving-amount').innerText = Discount;
-        }
-        const BalenceOf = document.getElementById('Balance').innerText;
 
-        //comapre banenceof less then saving amount
-        if (BalenceOf < savingAmount) {
-
-            // here is remainingBalence for negative number
-            alert('Error! you Balence is low .No remain ')
-            document.getElementById('remaining-balance').innerText = '00';
+            const BalenceOf = document.getElementById('Balance').innerText;
 
 
+
+
+            //comapre banenceof less then saving amount
+            if (BalenceOf < savingAmount) {
+
+                // here is remainingBalence for negative number
+                alert('Error! you Balence is low .No remain ')
+                document.getElementById('remaining-balance').innerText = '00';
+
+
+            } else {
+
+                // here is  remainingBalence for positive number
+                const remainingBalence = parseFloat(BalenceOf) - parseFloat(savingAmount)
+                document.getElementById('remaining-balance').innerText = remainingBalence;
+
+
+            }
         } else {
-
-            // here is  remainingBalence for positive number
-            const remainingBalence = parseFloat(BalenceOf) - parseFloat(savingAmount)
-            document.getElementById('remaining-balance').innerText = remainingBalence;
-
-
+            alert('Error! please postive number your income field');
         }
     }
 
