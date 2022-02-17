@@ -4,13 +4,13 @@ function expensesIncomesCalculate() {
     const foodField = document.getElementById('food-field').value;
     const rentField = document.getElementById('rent-field').value;
     const clothesField = document.getElementById('clothes-field').value;
+    const incomeField = document.getElementById('income-field').value;
 
-
-
-
-    if (foodField < 0 || foodField == '') {
+    if (foodField == '' && rentField == '' && clothesField == '') {
+        alert('Error! check input')
+    } else if (foodField < 0 || foodField == '') {
         //empty string and negative error handle food input
-
+        alert('Error! please enter a number input')
 
         alert('Error! please enter a number and positve number of your food input')
 
@@ -31,9 +31,11 @@ function expensesIncomesCalculate() {
         //here is check  input field food,clothes,rent and error handle
         const calculateValue = parseFloat(foodField) + parseFloat(rentField) + parseFloat(clothesField);
 
-
-        const totalExpenses = document.getElementById('total-expenses').innerText = calculateValue;
-        const incomeField = document.getElementById('income-field').value;
+        if (calculateValue > incomeField) {
+            const totalExpenses = document.getElementById('total-expenses').innerText = '00';
+        } else if (calculateValue < incomeField) {
+            const totalExpenses = document.getElementById('total-expenses').innerText = calculateValue;
+        }
 
 
         if (incomeField < 0) {
@@ -48,7 +50,7 @@ function expensesIncomesCalculate() {
         if (incomeField < calculateValue) {
 
 
-            alert('Error! your income is low.please update your income')
+            alert('Error! your income is low.No expense update your income')
             const BalenceOf = document.getElementById('Balance').innerText = '00'
 
             // here is income high and calculateValue low then output totalbalence 
@@ -78,17 +80,15 @@ function DiscountSavingReminingCalculate() {
     const incomeField = document.getElementById('income-field').value;
     const discountField = document.getElementById('discount-field').value;
 
+    if (discountField == ' ' || discountField < 0) {
+        //empty string and negative error handle discount input
+        alert('Error! please enter number or positive Your discount input')
 
-    if (incomeField == '' || incomeField < 0) {
+    } else if (incomeField == '' || incomeField < 0) {
         //empty string and negative error handle income input
         alert('Error! please enter valid number your income field')
 
 
-
-    } else if (discountField == ' ' || discountField < 0) {
-        //empty string and negative error handle discount input
-
-        alert('Error! please enter number or positive Your discount input')
 
     } else {
 
