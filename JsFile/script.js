@@ -45,36 +45,57 @@ function expensesCalculate() {
     const rentField = document.getElementById('rent-field').value;
     const clothesField = document.getElementById('clothes-field').value;
 
+    if (foodField < 0 || foodField == '') {
+        alert('Error! please enter a number and positve number of your food input')
+    } else if (rentField < 0 || rentField == '') {
+        alert('Error! please enter a number and positve number of your rent input')
 
-    const calculateValue = parseFloat(foodField) + parseFloat(rentField) + parseFloat(clothesField);
+    } else if (clothesField < 0 || clothesField == '') {
+        alert('Error! please enter a number and positve number of your clothes input')
+
+    } else if (clothesField > 0 || clothesField > 0 || rentField > 0) {
+        const calculateValue = parseFloat(foodField) + parseFloat(rentField) + parseFloat(clothesField);
 
 
 
-    const totalExpenses = document.getElementById('total-expenses').innerText = calculateValue;
-    const incomeField = document.getElementById('income-field').value;
+        const totalExpenses = document.getElementById('total-expenses').innerText = calculateValue;
+        const incomeField = document.getElementById('income-field').value;
+        if (incomeField < 0) {
+            alert("Error! please postive number income filed")
+        }
+        if (incomeField < calculateValue) {
+            alert('Error! your income is low.please update your income')
+            const BalenceOf = document.getElementById('Balance').innerText = '0'
+        } else if (incomeField > calculateValue) {
+            const totalBalence = parseFloat(incomeField) - parseFloat(calculateValue)
+            const BalenceOf = document.getElementById('Balance').innerText = totalBalence
+        }
 
-    const totalBalence = parseFloat(incomeField) - parseFloat(calculateValue)
-    const BalenceOf = document.getElementById('Balance').innerText = totalBalence
+
+    }
 }
 
 function DiscountCalculate() {
     const incomeField = document.getElementById('income-field').value;
+    if (incomeField == '' || incomeField < 0) {
+        alert('Error! please enter valid number your income field')
 
-    const discounField = document.getElementById('discoun-field').value;
-    if (discounField == '' || discounField < 0) {
-        alert('Error please number or positive Your discount field')
-    } else {
-
-        const Discount = (parseFloat(incomeField) * parseFloat(discounField)) / 100;
-
-
-        const savingAmount = document.getElementById('saving-amount').innerText = Discount;
-
-        const BalenceOf = document.getElementById('Balance').innerText;
-
-        const remainingBalence = parseFloat(BalenceOf) - parseFloat(savingAmount)
-        document.getElementById('remaining-balance').innerText = remainingBalence;
     }
+    const discounField = document.getElementById('discoun-field').value;
+    if (discounField == ' ' || discounField < 0) {
+        alert('Error! please enter number or positive Your discount input')
+    }
+
+    const Discount = (parseFloat(incomeField) * parseFloat(discounField)) / 100;
+
+
+    const savingAmount = document.getElementById('saving-amount').innerText = Discount;
+
+    const BalenceOf = document.getElementById('Balance').innerText;
+
+    const remainingBalence = parseFloat(BalenceOf) - parseFloat(savingAmount)
+    document.getElementById('remaining-balance').innerText = remainingBalence;
+
 }
 
 
