@@ -92,13 +92,15 @@ function DiscountSavingReminingCalculate() {
 
 
     } else {
-
+        //here is error handle  discount 
+        if (discountField == '') { alert('Error! please input discont field') }
         //here is discount 
-        const Discount = (parseFloat(incomeField) * parseFloat(discountField)) / 100;
+        else {
+            const Discount = (parseFloat(incomeField) * parseFloat(discountField)) / 100;
 
 
-        const savingAmount = document.getElementById('saving-amount').innerText = Discount;
-
+            const savingAmount = document.getElementById('saving-amount').innerText = Discount;
+        }
         const BalenceOf = document.getElementById('Balance').innerText;
 
         //comapre banenceof less then saving amount
