@@ -77,16 +77,17 @@ function expensesIncomesCalculate() {
 function DiscountSavingReminingCalculate() {
 
     // here is income input value catch and discount value
-    const incomeField = document.getElementById('income-field').value;
     const discountField = document.getElementById('discount-field').value;
+    const incomeField = document.getElementById('income-field').value;
 
-    if (discountField == ' ' || discountField < 0) {
-        //empty string and negative error handle discount input
-        alert('Error! please enter number or positive Your discount input')
 
-    } else if (incomeField == '' || incomeField < 0) {
+
+    //empty string and negative error handle discount input
+
+
+    if (incomeField == '' || incomeField < 0 && discountField == ' ' || discountField < 0) {
         //empty string and negative error handle income input
-        alert('Error! please enter valid number your income field')
+        alert('Error! please enter valid number input field')
 
 
 
