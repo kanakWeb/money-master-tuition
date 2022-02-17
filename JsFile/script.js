@@ -65,7 +65,8 @@ function expensesCalculate() {
         }
         if (incomeField < calculateValue) {
             alert('Error! your income is low.please update your income')
-            const BalenceOf = document.getElementById('Balance').innerText = '0'
+            const totalBalence = parseFloat(incomeField) - parseFloat(calculateValue)
+            const BalenceOf = document.getElementById('Balance').innerText = totalBalence
         } else if (incomeField > calculateValue) {
             const totalBalence = parseFloat(incomeField) - parseFloat(calculateValue)
             const BalenceOf = document.getElementById('Balance').innerText = totalBalence
@@ -77,24 +78,31 @@ function expensesCalculate() {
 
 function DiscountCalculate() {
     const incomeField = document.getElementById('income-field').value;
+    const discounField = document.getElementById('discoun-field').value;
     if (incomeField == '' || incomeField < 0) {
         alert('Error! please enter valid number your income field')
 
-    }
-    const discounField = document.getElementById('discoun-field').value;
-    if (discounField == ' ' || discounField < 0) {
+    } else if (discounField == ' ' || discounField < 0) {
         alert('Error! please enter number or positive Your discount input')
+
+    } else {
+
+        const Discount = (parseFloat(incomeField) * parseFloat(discounField)) / 100;
+
+
+        const savingAmount = document.getElementById('saving-amount').innerText = Discount;
+
+        const BalenceOf = document.getElementById('Balance').innerText;
+
+        if (BalenceOf < savingAmount) {
+            alert('Error! you Balence is low .Nosaving ')
+            const remainingBalence = parseFloat(BalenceOf) - parseFloat(savingAmount)
+            document.getElementById('remaining-balance').innerText = remainingBalence;
+        } else {
+            const remainingBalence = parseFloat(BalenceOf) - parseFloat(savingAmount)
+            document.getElementById('remaining-balance').innerText = remainingBalence;
+        }
     }
-
-    const Discount = (parseFloat(incomeField) * parseFloat(discounField)) / 100;
-
-
-    const savingAmount = document.getElementById('saving-amount').innerText = Discount;
-
-    const BalenceOf = document.getElementById('Balance').innerText;
-
-    const remainingBalence = parseFloat(BalenceOf) - parseFloat(savingAmount)
-    document.getElementById('remaining-balance').innerText = remainingBalence;
 
 }
 
